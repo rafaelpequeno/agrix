@@ -14,12 +14,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Implementa a camada controller para autenticação.
+ */
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
 
   private final AuthenticationManager authenticationManager;
-  private TokenService tokenService;
+  private final TokenService tokenService;
 
   @Autowired
   public AuthController(AuthenticationManager authenticationManager, TokenService tokenService) {
@@ -27,10 +30,17 @@ public class AuthController {
     this.tokenService = tokenService;
   }
 
+  /**
+   * Implementa o método de login da aplicação.
+   *
+   * @param authDto Dto de autenticação com usuário e senha.
+   * @return Retorna um token JWT.
+   */
   @PostMapping("/login")
   public TokenDto login(@RequestBody AuthDto authDto) {
-    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-        authDto.username(), authDto.password());
+    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+        new UsernamePasswordAuthenticationToken(
+            authDto.username(), authDto.password());
     Authentication authentication = authenticationManager.authenticate(
         usernamePasswordAuthenticationToken);
     String token = tokenService.generateToken(authentication.getName());

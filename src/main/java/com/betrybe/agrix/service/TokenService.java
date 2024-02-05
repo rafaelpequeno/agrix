@@ -7,6 +7,9 @@ import java.time.temporal.ChronoUnit;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+/**
+ * Implementa a camada de serviço para o token JWT.
+ */
 @Service
 public class TokenService {
 
@@ -16,6 +19,12 @@ public class TokenService {
     this.algorithm = Algorithm.HMAC256(secret);
   }
 
+  /**
+   * Implementa o método que gera o token JWT.
+   *
+   * @param username Nome de usuário.
+   * @return retorna um token JWT.
+   */
   public String generateToken(String username) {
     return JWT.create()
         .withSubject(username)
