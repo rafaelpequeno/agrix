@@ -35,4 +35,17 @@ public class TokenService {
   public Instant generateExpiration() {
     return Instant.now().plus(2, ChronoUnit.HOURS);
   }
+
+  /**
+   * Implementa a validação do token.
+   *
+   * @param token Token JWT
+   * @return Retorna o nome do usuário com token válidado.
+   */
+  public String validateToken(String token) {
+    return JWT.require(algorithm)
+        .build()
+        .verify(token)
+        .getSubject();
+  }
 }

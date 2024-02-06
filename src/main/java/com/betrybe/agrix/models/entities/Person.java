@@ -8,8 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
@@ -68,10 +70,6 @@ public class Person implements UserDetails {
     this.username = username;
   }
 
-  @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    return null;
-  }
 
   public String getPassword() {
     return password;
@@ -87,6 +85,11 @@ public class Person implements UserDetails {
 
   public void setRole(Role role) {
     this.role = role;
+  }
+
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return List.of(new SimpleGrantedAuthority(role.getName()));
   }
 
   @Override
