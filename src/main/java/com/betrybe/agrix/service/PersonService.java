@@ -2,8 +2,6 @@ package com.betrybe.agrix.service;
 
 import com.betrybe.agrix.models.entities.Person;
 import com.betrybe.agrix.models.repositories.PersonRepository;
-import com.betrybe.agrix.service.exception.PersonNotFoundException;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
- * Service layer class for handling persons business logic.
+ * Implements a service layer for the person entity.
  */
 @Service
 public class PersonService implements UserDetailsService {
@@ -26,33 +24,7 @@ public class PersonService implements UserDetailsService {
   }
 
   /**
-   * Returns a person for a given ID.
-   */
-  public Person getPersonById(Long id) {
-    Optional<Person> person = personRepository.findById(id);
-
-    if (person.isEmpty()) {
-      throw new PersonNotFoundException();
-    }
-
-    return person.get();
-  }
-
-  /**
-   * Returns a person for a given username.
-   */
-  public Person getPersonByUsername(String username) {
-    Optional<Person> person = personRepository.findByUsername(username);
-
-    if (person.isEmpty()) {
-      throw new PersonNotFoundException();
-    }
-
-    return person.get();
-  }
-
-  /**
-   * Creates a new person.
+   * Creates a new person with encrypted password.
    */
   public Person create(Person person) {
     String hashdPassword = new BCryptPasswordEncoder().encode(person.getPassword());
@@ -60,6 +32,13 @@ public class PersonService implements UserDetailsService {
     return personRepository.save(person);
   }
 
+  /**
+   * Implements the method for Spring Security retrieve the user datails.
+   *
+   * @param username The username identifier of the Person entity.
+   * @return The given Person details.
+   * @throws UsernameNotFoundException if the specified Person is not found.
+   */
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     return personRepository.findByUsername(username)

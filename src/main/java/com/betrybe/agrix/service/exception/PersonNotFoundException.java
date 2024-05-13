@@ -1,7 +1,7 @@
 package com.betrybe.agrix.service.exception;
 
 /**
- * Exception for when a person is not found.
+ * Exception thrown when a Person is not found.
  */
 public class PersonNotFoundException extends RuntimeException {
 

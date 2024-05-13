@@ -4,23 +4,23 @@ import com.betrybe.agrix.models.entities.Crop;
 import java.time.LocalDate;
 
 /**
- * Implementa Dto da plantação.
+ * Implements the Crop DTO methods.
  *
- * @param id          "Id" da planatação.
- * @param name        nome da plantação.
- * @param plantedArea área total da plantação.
- * @param plantedDate Data da plantação.
- * @param harvestDate Data da colheita.
- * @param farmId      "Id" da fazenda proprietária da planatação.
+ * @param id          The Crop Entity identifier.
+ * @param name        The Crop Entity name.
+ * @param plantedArea The Crop Entity planted area.
+ * @param plantedDate The Crop Entity planted date.
+ * @param harvestDate The Crop Entity harvest date.
+ * @param farmId      The identifier of the Farm entity to which the Crop belongs.
  */
 public record CropDto(Long id, String name, Double plantedArea, LocalDate plantedDate,
                       LocalDate harvestDate, Long farmId) {
 
   /**
-   * Método que transforma Entidade em DTO.
+   * Implements the Entity to DTO method.
    *
-   * @param crop Entidade plantação.
-   * @return Retorna a plantação no formato de DTO.
+   * @param crop The Crop entity.
+   * @return Return a Crop DTO.
    */
   public static CropDto fromEntity(Crop crop) {
     return
@@ -29,9 +29,9 @@ public record CropDto(Long id, String name, Double plantedArea, LocalDate plante
   }
 
   /**
-   * Método que transforma Dto em entidade.
+   * Implements the DTO to Entity method.
    *
-   * @return Retorna a plantação no formato de entidade.
+   * @return Return a Crop entity.
    */
   public Crop toEntity() {
     Crop crop = new Crop();

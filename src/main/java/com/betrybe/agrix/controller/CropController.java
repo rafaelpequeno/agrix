@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Implementa a camada de controle para a entidade Crop.
+ * Implements a controller layer for the Crop entity.
  */
 @RestController
 @RequestMapping("/crops")
 public class CropController {
 
-  private CropService cropService;
+  private final CropService cropService;
 
   @Autowired
   public CropController(CropService cropService) {
@@ -53,13 +53,13 @@ public class CropController {
   }
 
   /**
-   * Implementa a associação entre plantação e fertilizante na camada controller.
+   * Implements the association between Crop and Fertilizer.
    *
-   * @param cropId       Id da plantação.
-   * @param fertilizerId Id do fertilizante.
-   * @return Retorna uma mensagem se a operação for bem sucedida.
-   * @throws CropNotFoundException       Lança uma excessão se a fazenda não for encontrada.
-   * @throws FertilizerNotFoundException Lança uma excessão se o fertilizante não for encontrado.
+   * @param cropId       The Crop entity identifier.
+   * @param fertilizerId The Fertilizer entity identifier.
+   * @return Return a success message.
+   * @throws CropNotFoundException       if the specified Crop is not found.
+   * @throws FertilizerNotFoundException if the specified Fertilizer is not found.
    */
   @PostMapping("/{cropId}/fertilizers/{fertilizerId}")
   public ResponseEntity<String> addFertilizer(@PathVariable("cropId") Long cropId,
@@ -71,12 +71,11 @@ public class CropController {
   }
 
   /**
-   * Implementa o método que retorna os fertilizantes utilizados na plantação com o id
-   * correspondente.
+   * Implements the method that retrieves a list of fertilizers used in a specified Crop.
    *
-   * @param cropId Id da plantação.
-   * @return Retorna uma lista com os fertilizantes da plantação.
-   * @throws CropNotFoundException Lança uma excessão quando não encontra a plantação.
+   * @param cropId The Crop entity identifier.
+   * @return Return a list of the fertilizers used in a specified Crop.
+   * @throws CropNotFoundException if the Crop is not found.
    */
   @GetMapping("/{cropId}/fertilizers")
   public ResponseEntity<List<FertilizerDto>> findCropFertilizers(

@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Implementa o controller para a rota persons.
+ * Implements a controller layer for the Person entity.
  */
 @RestController
 @RequestMapping("/persons")

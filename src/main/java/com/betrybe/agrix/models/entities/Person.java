@@ -15,7 +15,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * Class representing a person.
+ * Represents a Person entity.
  */
 @Entity
 public class Person implements UserDetails {

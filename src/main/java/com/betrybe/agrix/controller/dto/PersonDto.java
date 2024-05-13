@@ -4,11 +4,11 @@ import com.betrybe.agrix.models.entities.Person;
 import com.betrybe.agrix.security.Role;
 
 /**
- * Implementa Dto para a entidade Pessoa.
+ * Implements the Person DTO.
  *
- * @param id       Id da pessoa.
- * @param username Nome de usuário da pessoa.
- * @param role     Tipo de permissões da pessoa.
+ * @param id       The Person entity identifier.
+ * @param username The Person entity username.
+ * @param role     The Person entity role permission.
  */
 public record PersonDto(Long id, String username, Role role) {
 

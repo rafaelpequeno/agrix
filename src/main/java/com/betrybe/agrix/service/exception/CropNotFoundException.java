@@ -1,7 +1,7 @@
 package com.betrybe.agrix.service.exception;
 
 /**
- * Implementa excessão para plantação não encontrada.
+ * Exception thrown when a crop is not found.
  */
 public class CropNotFoundException extends RuntimeException {
 

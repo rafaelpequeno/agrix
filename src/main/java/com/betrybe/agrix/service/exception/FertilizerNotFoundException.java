@@ -1,7 +1,7 @@
 package com.betrybe.agrix.service.exception;
 
 /**
- * Implementa a exceção para fertilizante não encontrado.
+ * Exception thrown when a Fertilizer is not found.
  */
 public class FertilizerNotFoundException extends RuntimeException {
 

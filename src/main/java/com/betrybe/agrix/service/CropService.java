@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementa a camada de serviço para a entidade Crop.
+ * Implements a service layer for the Crop entity.
  */
 @Service
 public class CropService {
@@ -23,11 +23,13 @@ public class CropService {
   private final FarmService farmService;
   private final FertilizerService fertilizerService;
 
+
   /**
-   * Implementa o contrutor da camada de serviço.
+   * Implements the service layer constructor.
    *
-   * @param cropRepository Base de dados da entidade Crop.
-   * @param farmService    Camada de serviço da entidade Farm.
+   * @param cropRepository    The repository for accessing Crop entities.
+   * @param farmService       The service for managing Farm entities.
+   * @param fertilizerService The service for managing Fertilizer entities.
    */
   @Autowired
   public CropService(CropRepository cropRepository, FarmService farmService,
@@ -37,22 +39,22 @@ public class CropService {
     this.fertilizerService = fertilizerService;
   }
 
-  public Crop create(Crop crop) {
+  public Crop save(Crop crop) {
     return cropRepository.save(crop);
   }
 
   /**
-   * Cria uma nova plantação.
+   * Create a new Crop.
    *
-   * @param farmId "Id" da fazenda proprietária da plantação.
-   * @param crop   Entidade plantação.
-   * @return Retorna a plantação criada.
-   * @throws FarmNotFoundException Lança uma excessão caso não encontre a fazenda informada.
+   * @param farmId The identifier of the Farm entity to which the Crop belongs.
+   * @param crop   The Crop entity.
+   * @return A new Crop.
+   * @throws FarmNotFoundException If the specified Farm is not found.
    */
-  public Crop createCrop(Long farmId, Crop crop) throws FarmNotFoundException {
+  public Crop create(Long farmId, Crop crop) throws FarmNotFoundException {
     Farm farm = farmService.findById(farmId);
     crop.setFarm(farm);
-    return create(crop);
+    return save(crop);
   }
 
   public List<Crop> findByFarmId(Long farmId) {
@@ -74,13 +76,13 @@ public class CropService {
   }
 
   /**
-   * Implementa a associação entre plantação e fertilizante na camada controller.
+   * Implements the association between Crop and fertilizer.
    *
-   * @param cropId       Id da plantação.
-   * @param fertilizerId Id do fertilizante.
-   * @return Retorna uma mensagem se a operação for bem sucedida.
-   * @throws CropNotFoundException       Lança uma excessão se a fazenda não for encontrada.
-   * @throws FertilizerNotFoundException Lança uma excessão se o fertilizante não for encontrado.
+   * @param cropId       The identifier of the Crop entity.
+   * @param fertilizerId The identifier of the Fertilizer entity.
+   * @return A success message when completes de association.
+   * @throws CropNotFoundException       if the specified Crop is not found.
+   * @throws FertilizerNotFoundException if the specified Fertilizer is not found.
    */
   public String addFertilizer(Long cropId, Long fertilizerId)
       throws CropNotFoundException, FertilizerNotFoundException {

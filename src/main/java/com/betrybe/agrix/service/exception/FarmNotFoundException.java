@@ -1,7 +1,7 @@
 package com.betrybe.agrix.service.exception;
 
 /**
- * Implementa a FarmNotFoundException.
+ * Exception thrown when a Farm is not found.
  */
 public class FarmNotFoundException extends RuntimeException {
 

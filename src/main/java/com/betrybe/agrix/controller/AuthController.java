@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Implementa a camada controller para autenticação.
+ * Implements a controller layer for authentication.
  */
 @RestController
 @RequestMapping("/auth")
@@ -31,10 +31,10 @@ public class AuthController {
   }
 
   /**
-   * Implementa o método de login da aplicação.
+   * Implements the login method.
    *
-   * @param authDto Dto de autenticação com usuário e senha.
-   * @return Retorna um token JWT.
+   * @param authDto The authentication DTO.
+   * @return Return a JWT token.
    */
   @PostMapping("/login")
   public TokenDto login(@RequestBody AuthDto authDto) {

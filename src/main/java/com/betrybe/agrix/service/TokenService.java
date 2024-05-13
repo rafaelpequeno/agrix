@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementa a camada de serviço para o token JWT.
+ * Implements a service layer for JWT token validation.
  */
 @Service
 public class TokenService {
@@ -20,10 +20,10 @@ public class TokenService {
   }
 
   /**
-   * Implementa o método que gera o token JWT.
+   * Implements the JWT token generator method.
    *
-   * @param username Nome de usuário.
-   * @return retorna um token JWT.
+   * @param username The Person username.
+   * @return returns a JWT token.
    */
   public String generateToken(String username) {
     return JWT.create()
@@ -37,10 +37,10 @@ public class TokenService {
   }
 
   /**
-   * Implementa a validação do token.
+   * Implements the token validation.
    *
-   * @param token Token JWT
-   * @return Retorna o nome do usuário com token válidado.
+   * @param token The JWT token.
+   * @return Returns the Person username after the successful token validation.
    */
   public String validateToken(String token) {
     return JWT.require(algorithm)

@@ -59,7 +59,7 @@ public class FarmController {
   @PostMapping("/{id}/crops")
   public ResponseEntity<CropDto> createCrop(@PathVariable("id") Long farmId,
       @RequestBody CropCreationDto newCrop) throws FarmNotFoundException {
-    Crop crop = cropService.createCrop(farmId, newCrop.toEntityWithoutFarm());
+    Crop crop = cropService.create(farmId, newCrop.toEntityWithoutFarm());
     return ResponseEntity.status(HttpStatus.CREATED).body(CropDto.fromEntity(crop));
   }
 

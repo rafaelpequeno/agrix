@@ -3,19 +3,19 @@ package com.betrybe.agrix.controller.dto;
 import com.betrybe.agrix.models.entities.Farm;
 
 /**
- * Implementa Dto da fazenda.
+ * Implements the Farm DTO methods.
  *
- * @param id   "Id" da fazenda.
- * @param name nome da fazenda.
- * @param size tamanho da fazenda.
+ * @param id   The Farm entity identifier.
+ * @param name The Farm entity name.
+ * @param size The Farm entity size.
  */
 public record FarmDto(Long id, String name, Double size) {
 
   /**
-   * Transforma a entidade fazenda em Dto.
+   * Implements the Farm Entity to DTO method.
    *
-   * @param farm Entidade Fazenda.
-   * @return Retorna um Dto de fazenda.
+   * @param farm Farm entity.
+   * @return Return a Farm DTO.
    */
   public static FarmDto fromEntity(Farm farm) {
     return new FarmDto(
@@ -24,9 +24,9 @@ public record FarmDto(Long id, String name, Double size) {
   }
 
   /**
-   * Transforma Dto da fazenda em Entidade.
+   * Implements the Farm DTO to Entity method.
    *
-   * @return Retorna a entidade fazenda.
+   * @return Return a Farm entity.
    */
   public Farm toEntity() {
     Farm farm = new Farm();

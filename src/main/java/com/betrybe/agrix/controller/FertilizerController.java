@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Implementa o serviço de controle da entidade de fertilizantes.
+ * Implements a controller layer for the Fertilizer entity.
  */
 @RestController
 @RequestMapping("/fertilizers")

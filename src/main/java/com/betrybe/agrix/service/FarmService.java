@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementa o service para a classe Farm.
+ * Implements a service layer for the Farm entity.
  */
 @Service
 public class FarmService {
