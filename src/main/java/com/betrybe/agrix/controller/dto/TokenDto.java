@@ -1,9 +1,9 @@
 package com.betrybe.agrix.controller.dto;
 
 /**
- * Implementa Dto para retornar o token do usuário autenticado.
+ * Implements the JWT token DTO.
  *
- * @param token Token JWT.
+ * @param token JWT token.
  */
 public record TokenDto(String token) {
 

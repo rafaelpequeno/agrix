@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * Implementa o filtro JWT.
+ * Implements the JWT filter.
  */
 @Component
 public class JwtFilter extends OncePerRequestFilter {

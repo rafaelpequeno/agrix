@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 /**
- * Implementa a entidade Farm.
+ * Represents a Farm entity.
  */
 @Entity
 @Table(name = "farm")

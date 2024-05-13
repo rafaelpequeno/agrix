@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 /**
- * Implementa a entidade de fertilizantes.
+ * Represents a Fertilizer entity.
  */
 @Entity
 @Table(name = "fertilizer")

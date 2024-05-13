@@ -4,20 +4,20 @@ import com.betrybe.agrix.models.entities.Fertilizer;
 import java.util.List;
 
 /**
- * Implementa Dto da entidade de fertilizantes.
+ * Implements the Fertilizer DTO methods.
  *
- * @param id          Id do fertilizante.
- * @param name        Nome do fertilizante.
- * @param brand       Marca do fertilizante.
- * @param composition Composição do fertilizante.
+ * @param id          The Fertilizer entity identifier.
+ * @param name        The Fertilizer entity name.
+ * @param brand       The Fertilizer entity brand.
+ * @param composition The Fertilizer entity composition.
  */
 public record FertilizerDto(Long id, String name, String brand, String composition) {
 
   /**
-   * Transforma a entidade fertilizante em um DTO.
+   * Implements the Fertilizer entity to DTO method.
    *
-   * @param fertilizer Entidade de fertilizante.
-   * @return Retorna um Dto da entidade de fertilizante.
+   * @param fertilizer The Fertilizer entity.
+   * @return Return a Fertilizer DTO.
    */
   public static FertilizerDto fromEntity(Fertilizer fertilizer) {
     return new FertilizerDto(fertilizer.getId(), fertilizer.getName(), fertilizer.getBrand(),
@@ -25,9 +25,9 @@ public record FertilizerDto(Long id, String name, String brand, String compositi
   }
 
   /**
-   * Transforma um DTO de fertilizante em entidade.
+   * Implements the Fertilizer DTO to entity method.
    *
-   * @return Retorna uma entidade de fertilizante.
+   * @return Return a Fertilizer entity.
    */
   public Fertilizer toEntity() {
     Fertilizer fertilizer = new Fertilizer();
@@ -39,10 +39,11 @@ public record FertilizerDto(Long id, String name, String brand, String compositi
   }
 
   /**
-   * Implementa o método que transforma uma lista de entidades fertilizante em uma lista de dto.
+   * Implements the method which transforms a list of Fertilizer entities into a list of Fertilizer
+   * DTOs.
    *
-   * @param fertilizers Recebe uma lista de entidades do tipo fertilizante.
-   * @return Retorna uma lista de Dto da entidade fertilizante.
+   * @param fertilizers A list of Fertilizer entities.
+   * @return Return a list of Fertilizer DTOs.
    */
   public static List<FertilizerDto> fromEntities(List<Fertilizer> fertilizers) {
     return fertilizers.stream()

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * Implementa o gerenciador geral de excessões.
+ * Implements the main exception handler.
  */
 @ControllerAdvice
 public class GeneralControllerAdvice {

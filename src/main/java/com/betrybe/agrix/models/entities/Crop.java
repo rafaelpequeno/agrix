@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementa a entidade Crop.
+ * Represents a Crop entity.
  */
 @Entity
 @Table(name = "crop")

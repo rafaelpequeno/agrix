@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * Implementa as configurações de segurança da API.
+ * Implements the API security configuration.
  */
 @Configuration
 @EnableWebSecurity
@@ -33,11 +33,11 @@ public class SecurityConfig {
   }
 
   /**
-   * Implementa o Bean do filtro de segurança do Spring.
+   * Implements the Spring Security filter chain configuration.
    *
-   * @param httpSecurity Método de segurança HTTP.
-   * @return Cadeia de segurança do Spring devidamente configurada.
-   * @throws Exception Lança uma excessão caso algo não ocorra como esperado nas configurações.
+   * @param httpSecurity The HTTP security method.
+   * @return A configured Spring security filter chain.
+   * @throws Exception If an erro occurs during configuration.
    */
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {

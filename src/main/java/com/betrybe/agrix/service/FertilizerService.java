@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementa a camada de serviço da entidade de fertilizante.
+ * Implements a service layer for the fertilizer entity.
  */
 @Service
 public class FertilizerService {

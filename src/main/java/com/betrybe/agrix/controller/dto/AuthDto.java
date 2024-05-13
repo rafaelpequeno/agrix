@@ -1,10 +1,10 @@
 package com.betrybe.agrix.controller.dto;
 
 /**
- * Implementa Dto para autenticação.
+ * Implements the authentication DTO.
  *
- * @param username Nome de usuário.
- * @param password Senha do usuário.
+ * @param username The Person username.
+ * @param password The person password.
  */
 public record AuthDto(String username, String password) {
 
