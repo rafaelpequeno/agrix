@@ -1,4 +1,13 @@
 services:
+  application:
+    container_name: app
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
+    links:
+      - mysql:database
+
   mysql:
     container_name: agrix-db
     image: mysql
