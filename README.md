@@ -30,4 +30,15 @@ Using Docker
 * Clone this repository.
 * Run ```docker compose up -d``` or ```docker compose up``` to see the logs.
 * After all build up you can test the application in your API Client on port 8080.
+
+### API Endpoints
+| HTTP Verbs | Endpoints | Action | Body
+| --- | --- | --- | --- |
+| POST | /persons| To create a new user | username: string, password: string, role
+| POST | /api/user/login | To login an existing user account |
+| POST | /api/causes | To create a new cause |
+| GET | /api/causes | To retrieve all causes on the platform |
+| GET | /api/causes/:causeId | To retrieve details of a single cause |
+| PATCH | /api/causes/:causeId | To edit the details of a single cause |
+| DELETE | /api/causes/:causeId | To delete a single cause |
   
