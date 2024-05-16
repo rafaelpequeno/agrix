@@ -41,7 +41,7 @@ Using Docker
 | POST | /farms/:farmId/crops | To add a crop to the farm | name: string, plantedArea: double, plantedDate: date, harvestDate: date. ex("2022-12-05")
 | GET | /farms/:farmId/crops | Retrieve all crops belonging to the specified farm |
 | GET | /crops | To retrieve all crops | 
-| GET | /crops/:cropID | To retrieve details of a single crop |
+| GET | /crops/:cropId | To retrieve details of a single crop |
 | POST | /crops/:cropId/fertilizers/:fertilizerId | To add a fertilizer to the crop |
 | GET | /crops/:cropId/fertilizers | Retrieve all fertilizers belonging to the specified crop |
 | POST | /fertilizers | To create a new fertilizer | name: string, brand: string, composition: string
