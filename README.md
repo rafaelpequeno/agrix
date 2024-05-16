@@ -12,8 +12,20 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 Agrix is an API developed for educational purposes in Java and Spring, aimed at facilitating farm management, including tasks such as crop and fertilizer management.
 
 ### Features
-* Users can signup and login to their accounts
-* Authenticated users are able to create and search for farms, crops and fertilizers.
+* User Authentication:
+  * Users can sign up for new accounts and log in to existing ones securely.
+* Farm Management:
+  * Authenticated users can create new farms.
+  * Users can search for farms, either retrieving all farms or a specific one by its unique ID.
+* Crop Management:
+  * Authenticated users can create new crops linked to a farm.
+  * Users can search for crops, either retrieving all crops or a specific one by its unique ID.
+  * Users can link fertilizers to their crops and search for then.
+* Fertilizer Management:
+  * Authenticated users can create new Fertilizers.
+  * Users can search for all fertilizers.
 
-### Installation Guide
-* Clone this repository [here]()
+### Usage
+Using Docker 
+* Clone this repository [here](git@github.com:rafaelpequeno/agrix.git).
+  
