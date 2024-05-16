@@ -15,10 +15,9 @@ Agrix is an API developed for educational purposes in Java and Spring, aimed at 
 * User Authentication:
   * Users can sign up for new accounts and log in to existing ones securely.
 * Farm Management:
-  * Authenticated users can create new farms.
+  * Authenticated users can create new farms and add crops to it.
   * Users can search for farms, either retrieving all farms or a specific one by its unique ID.
 * Crop Management:
-  * Authenticated users can create new crops linked to a farm.
   * Users can search for crops, either retrieving all crops or a specific one by its unique ID.
   * Users can link fertilizers to their crops and search for then.
 * Fertilizer Management:
@@ -26,7 +25,7 @@ Agrix is an API developed for educational purposes in Java and Spring, aimed at 
   * Users can search for all fertilizers.
 
 ### Usage
-Using Docker 
+Using Docker
 * Clone this repository.
 * Run ```docker compose up -d``` or ```docker compose up``` to see the logs.
 * After all build up you can test the application in your API Client on port 8080.
@@ -34,11 +33,24 @@ Using Docker
 ### API Endpoints
 | HTTP Verbs | Endpoints | Action | Body
 | --- | --- | --- | --- |
-| POST | /persons| To create a new user | username: string, password: string, role
-| POST | /api/user/login | To login an existing user account |
-| POST | /api/causes | To create a new cause |
-| GET | /api/causes | To retrieve all causes on the platform |
-| GET | /api/causes/:causeId | To retrieve details of a single cause |
-| PATCH | /api/causes/:causeId | To edit the details of a single cause |
-| DELETE | /api/causes/:causeId | To delete a single cause |
+| POST | /persons| To create a new user | username: string, password: string, role: enum (ADMIN, MANAGER OR USER)
+| POST | /login | To login an existing user account | 
+| POST | /farms | To create a new farm | name: string, size: int
+| GET | /farms | To retrieve all farms | 
+| GET | /farms/:farmId | To retrieve details of a single farm |
+| POST | /farms/:farmId/crops | To add a crop to the farm | name: string, plantedArea: double, plantedDate: date, harvestDate: date. ex("2022-12-05")
+| GET | /farms/:farmId/crops | Retrieve all crops belonging to the specified farm |
+| GET | /crops | To retrieve all crops | 
+| GET | /crops/:cropID | To retrieve details of a single crop |
+| POST | /crops/:cropId/fertilizers/:fertilizerId | To add a fertilizer to the crop |
+| GET | /crops/:cropId/fertilizers | Retrieve all fertilizers belonging to the specified crop |
+| POST | /fertilizers | To create a new fertilizer | name: string, brand: string, composition: string
+| GET | /fertilizers | To retrieve all fertilizers |
+
+### Technologies Used
+* Java
+* Spring
+* Maven
+* MySQL
+* JWT 
   
