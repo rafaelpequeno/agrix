@@ -27,5 +27,7 @@ Agrix is an API developed for educational purposes in Java and Spring, aimed at 
 
 ### Usage
 Using Docker 
-* Clone this repository [here](git@github.com:rafaelpequeno/agrix.git).
+* Clone this repository.
+* Run ```docker compose up -d``` or ```docker compose up``` to see the logs.
+* After all build up you can test the application in your API Client on port 8080.
   
